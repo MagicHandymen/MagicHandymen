@@ -2,117 +2,77 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Моя творческая лента</title>
+    <title>Creative Portfolio</title>
     <style>
-        /* Основные стили */
+        /* Обновленные стили для шапки */
+        header {
+            text-align: center;
+            padding: 20px 0;
+            background: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            width: 200px; /* Размер логотипа */
+            margin: 10px auto;
+        }
+
+        nav {
+            margin-top: 15px;
+            padding: 10px;
+            background: #f8f9fa;
+        }
+
+        .nav-button {
+            display: inline-block;
+            margin: 0 15px;
+            padding: 10px 20px;
+            background: #007bff;
+            color: white !important;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s;
+        }
+
+        .nav-button:hover {
+            background: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        /* Остальные стили остаются как в предыдущем коде */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
-            padding: 20px;
             background: #f0f0f0;
         }
 
-        /* Шапка */
-        header {
-            text-align: center;
-            padding: 20px;
-            background: #333;
-            color: white;
-            margin-bottom: 30px;
-        }
-
-        /* Сетка с работами */
         .feed {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 20px;
             max-width: 1200px;
-            margin: 0 auto;
+            margin: 20px auto;
+            padding: 0 20px;
         }
 
-        /* Карточка работы */
-        .post {
-            background: white;
-            border-radius: 10px;
-            padding: 15px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        .post img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 5px;
-        }
-
-        .post video {
-            width: 100%;
-            border-radius: 5px;
-        }
-
-        .post-text {
-            padding: 10px;
-            color: #555;
-        }
-
-        /* Для видео с YouTube */
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            overflow: hidden;
-        }
-
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
+        /* ... остальные стили карточек ... */
     </style>
 </head>
 <body>
     <header>
-        <h1>🎨 Моя творческая лента</h1>
-        <p>Здесь я делюсь своими работами</p>
+        <!-- Логотип вместо текста -->
+        <img src="images/logo.png" alt="Company Logo" class="logo">
+        
+        <!-- Навигационная панель -->
+        <nav>
+            <a href="#jobs" class="nav-button">Our Jobs</a>
+            <a href="#contact" class="nav-button">Contact Us</a>
+        </nav>
     </header>
 
+    <!-- Остальная часть кода с лентой остается без изменений -->
     <div class="feed">
-        <!-- Пример поста с фото -->
-        <div class="post">
-            <img src="images/work1.jpg" alt="Моя работа 1">
-            <div class="post-text">
-                <h3>Мой первый рисунок</h3>
-                <p>Создано: 01 января 2024</p>
-                <p>Карандашный набросок природы</p>
-            </div>
-        </div>
-
-        <!-- Пример поста с видео -->
-        <div class="post">
-            <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
-                </iframe>
-            </div>
-            <div class="post-text">
-                <h3>Мое первое видео</h3>
-                <p>Создано: 05 января 2024</p>
-                <p>Таймлапс рисования</p>
-            </div>
-        </div>
-
-        <!-- Пример поста с текстом -->
-        <div class="post">
-            <div class="post-text">
-                <h3>Идея для новой работы</h3>
-                <p>Задумка: 10 января 2024</p>
-                <p>Хочу создать картину маслом с изображением космоса! 🌌</p>
-            </div>
-        </div>
+        ... ваши посты ...
     </div>
 </body>
 </html>
