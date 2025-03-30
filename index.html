@@ -13,7 +13,7 @@
         }
 
         header {
-            background: #1a365d url('header-bg.jpg') center/cover;
+            background: #1a365d;
             padding: 1rem;
             position: fixed;
             width: 100%;
@@ -32,7 +32,7 @@
         .nav-links {
             display: flex;
             gap: 2rem;
-            margin-left: auto;
+            margin-left: auto; /* ← Добавлено выравнивание вправо */
         }
 
         .nav-links a {
@@ -43,33 +43,11 @@
         .hero {
             height: 80vh;
             margin-top: 60px;
-            background: url('hero-bg.jpg') center/cover;
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
-
-        .hero-content {
-            max-width: 800px;
-            padding: 20px;
-        }
-
-        .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
         }
 
         .contact {
             padding: 4rem 2rem;
-            background: #1a365d url('contact-bg.jpg') center/cover;
+            background: #1a365d;
         }
 
         .contact-form {
@@ -105,10 +83,7 @@
     </header>
 
     <section class="hero">
-        <div class="hero-content">
-            <h1>Professional Handyman Services</h1>
-            <p>Quality repairs and maintenance for your home or business</p>
-        </div>
+        <!-- Пустой блок -->
     </section>
 
     <section id="contact" class="contact">
