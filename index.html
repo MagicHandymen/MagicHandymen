@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Form</title>
+    <title>Handyman Services</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
         }
 
         /* Фиксированный хедер */
@@ -22,9 +22,23 @@
             z-index: 1000;
         }
 
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            font-size: 1.5rem;
+            text-decoration: none;
+        }
+
         .nav-links {
-            text-align: right;
-            padding-right: 2rem;
+            display: flex;
+            gap: 2rem;
         }
 
         .nav-links a {
@@ -32,13 +46,24 @@
             text-decoration: none;
         }
 
-        /* Форма внизу страницы */
+        /* Основной контент */
+        .hero {
+            height: 80vh;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                        url('hero-bg.jpg') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-top: 60px;
+        }
+
+        /* Контактная форма внизу */
         .contact {
             padding: 4rem 2rem;
             background: #1a365d;
             color: white;
-            min-height: 100vh;
-            padding-top: 100px;
         }
 
         .contact-form {
@@ -62,18 +87,39 @@
             border-radius: 5px;
             cursor: pointer;
         }
+
+        footer {
+            background: #2d3748;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
+    <!-- Шапка -->
     <header>
         <nav>
+            <a href="#" class="logo">Handy Magic</a>
             <div class="nav-links">
-                <a href="#contact">Contact Us</a>
+                <a href="#services">Services</a>
+                <a href="#contact">Contact</a>
             </div>
         </nav>
     </header>
 
+    <!-- Основной контент -->
+    <section class="hero">
+        <div>
+            <h1>Professional Handyman Services</h1>
+            <p>Free Estimates | Fully Insured</p>
+            <button>Book Now</button>
+        </div>
+    </section>
+
+    <!-- Форма внизу страницы -->
     <section id="contact" class="contact">
+        <h2>Contact Us</h2>
         <form class="contact-form" action="https://formspree.io/f/mvojnzqw" method="POST">
             <input type="hidden" name="_replyto" value="magichandymen@gmail.com">
             <input type="text" name="name" placeholder="Name" required>
@@ -83,5 +129,9 @@
             <button type="submit">Send Message</button>
         </form>
     </section>
+
+    <footer>
+        <p>© 2023 Handy Magic. All rights reserved.</p>
+    </footer>
 </body>
 </html>
