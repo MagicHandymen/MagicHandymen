@@ -13,8 +13,7 @@
         }
 
         header {
-            background: linear-gradient(rgba(26, 54, 93, 0.8), rgba(26, 54, 93, 0.8)),
-                        url('https://example.com/header-bg.jpg') center/cover;
+            background: #1a365d;
             padding: 1rem;
             position: fixed;
             width: 100%;
@@ -22,24 +21,30 @@
             z-index: 1000;
         }
 
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            margin-left: auto;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+        }
+
         .hero {
             margin-top: 60px;
-            padding: 4rem 2rem;
-            background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
-                        url('https://example.com/hero-bg.jpg') center/cover fixed;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+            padding: 2rem;
         }
 
-        .contact {
-            padding: 4rem 2rem;
-            background: linear-gradient(rgba(26, 54, 93, 0.8), rgba(26, 54, 93, 0.8)),
-                        url('https://example.com/contact-bg.jpg') center/cover;
-        }
-
-        /* Остальные стили остаются как в предыдущей версии */
         .video-container {
             width: 60%;
             max-width: 800px;
@@ -58,17 +63,33 @@
             margin: 1rem 0;
             color: #333;
             line-height: 1.6;
-            background: rgba(255, 255, 255, 0.8);
-            padding: 2rem;
-            border-radius: 10px;
+        }
+
+        .contact {
+            padding: 4rem 2rem;
+            background: #1a365d;
         }
 
         .contact-form {
             max-width: 600px;
             margin: 0 auto;
-            background: rgba(255, 255, 255, 0.9);
-            padding: 2rem;
-            border-radius: 10px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 0.8rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        button {
+            background: #e67e22;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
         }
 
         @media (max-width: 768px) {
@@ -78,11 +99,6 @@
             }
             .video-container iframe {
                 height: 200px;
-            }
-            
-            .hero {
-                padding: 2rem 1rem;
-                background-attachment: scroll;
             }
         }
     </style>
