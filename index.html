@@ -46,9 +46,16 @@
         }
 
         .video-container {
-            text-align: center;
             width: 60%;
-            margin: 2rem 0;
+            max-width: 800px;
+            margin: 2rem auto;
+        }
+
+        .video-container iframe {
+            width: 100%;
+            height: 400px;
+            display: block;
+            margin: 0 auto;
         }
 
         .video-description {
@@ -84,6 +91,16 @@
             border-radius: 5px;
             cursor: pointer;
         }
+
+        @media (max-width: 768px) {
+            .video-container {
+                width: 100%;
+                padding: 0 1rem;
+            }
+            .video-container iframe {
+                height: 200px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -98,8 +115,6 @@
     <section class="hero">
         <div class="video-container">
             <iframe 
-                width="100%" 
-                height="400" 
                 src="https://www.youtube.com/embed/7NQ3YB6M4Hk" 
                 frameborder="0" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
