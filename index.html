@@ -5,10 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Handyman Services</title>
     <style>
-        /* Остальные стили остаются без изменений */
+        /* Базовые стили остаются без изменений */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
 
+        /* Исправленный стиль для шапки */
         header {
-            background: #1a365d url('header-bg.jpg') center/cover;
+            background-color: #1a365d; /* Цвет фона на случай отсутствия картинки */
+            background-image: url('header-bg.jpg');
+            background-position: center;
+            background-size: cover;
             padding: 1rem;
             position: fixed;
             width: 100%;
@@ -16,26 +26,122 @@
             z-index: 1000;
         }
 
+        /* Исправленный стиль для основной секции */
         .hero {
             margin-top: 60px;
             padding: 4rem 2rem;
-            background: #fff url('hero-bg.jpg') center/cover;
+            background-color: #ffffff; /* Белый фон на случай отсутствия картинки */
+            background-image: url('hero-bg.jpg');
+            background-position: center;
+            background-size: cover;
             min-height: 60vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
         }
 
+        /* Исправленный стиль для секции контактов */
         .contact {
             padding: 4rem 2rem;
-            background: #1a365d url('contact-bg.jpg') center/cover;
+            background-color: #1a365d; /* Основной цвет фона */
+            background-image: url('contact-bg.jpg');
+            background-position: center;
+            background-size: cover;
             color: white;
         }
 
         /* Остальные стили остаются без изменений */
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            margin-left: auto;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .video-container {
+            width: 60%;
+            max-width: 800px;
+            margin: 2rem auto;
+        }
+
+        .video-container iframe {
+            width: 100%;
+            height: 400px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .video-description {
+            text-align: center;
+            margin: 1rem 0;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 0.8rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        button {
+            background: #e67e22;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .video-container {
+                width: 100%;
+                padding: 0 1rem;
+            }
+            .video-container iframe {
+                height: 200px;
+            }
+        }
     </style>
 </head>
 <body>
-    <!-- Остальная разметка без изменений -->
-</body>
-</html>
+    <!-- Без изменений в разметке -->
+    <header>
+        <nav>
+            <div class="nav-links">
+                <a href="#contact">Contact Us</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="video-container">
+            <iframe 
+                src="https://www.youtube.com/embed/7NQ3YB6M4Hk" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        </div>
+        <div class="video-description">
+            <h2>Professional Handyman Services Demo</h2>
+            <p>Watch our experts in action! This video demonstrates our comprehensive range of home improvement services, 
+            including plumbing repairs, electrical work, furniture assembly, and general maintenance. 
+            Learn why thousands of homeowners trust us with their renovation projects.</p>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <form class="contact-form" action="https://formspree.io/f/mwplnwgo" method="POST">
+            <input type="text"
