@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Handyman Services</title>
     <style>
         * {
             margin: 0;
@@ -11,7 +12,7 @@
             font-family: 'Arial', sans-serif;
         }
 
-        /* Header Styles */
+        /* Фиксированный хедер */
         header {
             background: #1a365d;
             padding: 1rem;
@@ -19,7 +20,6 @@
             width: 100%;
             top: 0;
             z-index: 1000;
-            height: 80px; /* Добавлена фиксированная высота */
         }
 
         nav {
@@ -28,45 +28,96 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 100%;
-            position: relative;
         }
 
-        .contact-header {
-            position: absolute;
-            left: 20px;
-            bottom: -20px; /* Позиционирование в нижнем углу */
-            background: #e67e22;
-            padding: 10px 20px;
-            border-radius: 5px;
+        .logo {
+            color: white;
+            font-size: 1.5rem;
+            text-decoration: none;
         }
 
-        .contact-header a {
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
             color: white;
             text-decoration: none;
-            font-weight: bold;
         }
 
-        /* Остальные стили остаются без изменений */
-        /* ... */
+        /* Основной контент */
+        .hero {
+            height: 80vh;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                        url('hero-bg.jpg') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-top: 60px; /* Отступ для фиксированного хедера */
+        }
 
+        /* Секция с услугами */
+        .services {
+            padding: 4rem 2rem;
+            background: #f8f9fa;
+        }
+
+        /* Контактная форма */
+        .contact {
+            padding: 4rem 2rem;
+            background: #1a365d;
+            color: white;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 0.8rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        button {
+            background: #e67e22;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
     <header>
         <nav>
-            <div class="contact-header">
+            <a href="#" class="logo">Handy Magic</a>
+            <div class="nav-links">
+                <a href="#services">Services</a>
                 <a href="#contact">Contact Us</a>
             </div>
         </nav>
     </header>
 
-    <!-- Остальные секции -->
+    <section class="hero">
+        <div>
+            <h1>Professional Handyman Services</h1>
+            <p>Free Estimates | Fully Insured</p>
+            <button>Book Now</button>
+        </div>
+    </section>
 
     <section id="contact" class="contact">
         <h2>Contact Us</h2>
         <form class="contact-form" action="https://formspree.io/f/mvojnzqw" method="POST">
-            <input type="hidden" name="_replyto" value="Magichandymen@gmail.com">
+            <input type="hidden" name="_replyto" value="magichandymen@gmail.com">
             <input type="text" name="name" placeholder="Name" required>
             <input type="email" name="email" placeholder="Email" required>
             <input type="tel" name="phone" placeholder="Phone" required>
@@ -75,6 +126,8 @@
         </form>
     </section>
 
-    <!-- Остальной код -->
+    <footer>
+        <p>© 2023 Handy Magic. All rights reserved.</p>
+    </footer>
 </body>
 </html>
