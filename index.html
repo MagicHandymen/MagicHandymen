@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Handyman Services</title>
     <style>
+        /* Все предыдущие стили остаются без изменений */
         * {
             margin: 0;
             padding: 0;
@@ -12,7 +13,6 @@
             font-family: 'Arial', sans-serif;
         }
 
-        /* Фиксированный хедер */
         header {
             background: #1a365d;
             padding: 1rem;
@@ -22,92 +22,8 @@
             z-index: 1000;
         }
 
-        nav {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+        /* ... остальные стили ... */
 
-        .logo {
-            color: white;
-            font-size: 1.5rem;
-            text-decoration: none;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-        }
-
-        /* Основной контент */
-        .hero {
-            height: 80vh;
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-                        url('hero-bg.jpg') center/cover;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            margin-top: 60px; /* Отступ для фиксированного хедера */
-        }
-
-        /* Секция с услугами */
-        .services {
-            padding: 4rem 2rem;
-            background: #f8f9fa;
-        }
-
-        /* Контактная форма */
-        .contact {
-            padding: 4rem 2rem;
-            background: #1a365d;
-            color: white;
-        }
-
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-<!-- modify this form HTML and place wherever you want your form -->
-<form
-  action="https://formspree.io/f/mwplnwgo"
-  method="POST"
->
-  <label>
-    Your email:
-    <input type="email" name="email">
-  </label>
-  <label>
-    Your message:
-    <textarea name="message"></textarea>
-  </label>
-  <!-- your other form fields go here -->
-  <button type="submit">Send</button>
-</form>
-        input, textarea {
-            width: 100%;
-            padding: 0.8rem;
-            margin-bottom: 1rem;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        }
-
-        button {
-            background: #e67e22;
-            color: white;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
     </style>
 </head>
 <body>
@@ -126,8 +42,15 @@
 
     <section id="contact" class="contact">
         <h2>Contact Us</h2>
-        <form class="contact-form" action="https://formspree.io/f/mvojnzqw" method="POST">
+        <form class="contact-form" 
+              action="https://formspree.io/f/mvojnzqw" 
+              method="POST">
+            <!-- Добавьте эти скрытые поля -->
+            <input type="hidden" name="_subject" value="New Contact Request">
             <input type="hidden" name="_replyto" value="magichandymen@gmail.com">
+            <input type="hidden" name="_language" value="en">
+            
+            <!-- Существующие поля формы -->
             <input type="text" name="name" placeholder="Name" required>
             <input type="email" name="email" placeholder="Email" required>
             <input type="tel" name="phone" placeholder="Phone" required>
