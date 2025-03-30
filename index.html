@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Handyman Services</title>
     <style>
-        /* Базовые стили остаются без изменений */
         * {
             margin: 0;
             padding: 0;
@@ -13,12 +12,8 @@
             font-family: 'Arial', sans-serif;
         }
 
-        /* Исправленный стиль для шапки */
         header {
-            background-color: #1a365d; /* Цвет фона на случай отсутствия картинки */
-            background-image: url('header-bg.jpg');
-            background-position: center;
-            background-size: cover;
+            background: #1a365d url('header-bg.jpg') center/cover;
             padding: 1rem;
             position: fixed;
             width: 100%;
@@ -26,31 +21,14 @@
             z-index: 1000;
         }
 
-        /* Исправленный стиль для основной секции */
-        .hero {
-            margin-top: 60px;
-            padding: 4rem 2rem;
-            background-color: #ffffff; /* Белый фон на случай отсутствия картинки */
-            background-image: url('hero-bg.jpg');
-            background-position: center;
-            background-size: cover;
-            min-height: 60vh;
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        /* Исправленный стиль для секции контактов */
-        .contact {
-            padding: 4rem 2rem;
-            background-color: #1a365d; /* Основной цвет фона */
-            background-image: url('contact-bg.jpg');
-            background-position: center;
-            background-size: cover;
-            color: white;
-        }
-
-        /* Остальные стили остаются без изменений */
         .nav-links {
             display: flex;
             gap: 2rem;
@@ -60,6 +38,16 @@
         .nav-links a {
             color: white;
             text-decoration: none;
+        }
+
+        .hero {
+            margin-top: 60px;
+            padding: 4rem 2rem;
+            background: #fff url('hero-bg.jpg') center/cover;
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .video-container {
@@ -80,6 +68,12 @@
             margin: 1rem 0;
             color: #333;
             line-height: 1.6;
+        }
+
+        .contact {
+            padding: 4rem 2rem;
+            background: #1a365d url('contact-bg.jpg') center/cover;
+            color: white;
         }
 
         .contact-form {
@@ -116,7 +110,6 @@
     </style>
 </head>
 <body>
-    <!-- Без изменений в разметке -->
     <header>
         <nav>
             <div class="nav-links">
@@ -144,4 +137,12 @@
 
     <section id="contact" class="contact">
         <form class="contact-form" action="https://formspree.io/f/mwplnwgo" method="POST">
-            <input type="text"
+            <input type="text" name="name" placeholder="Name" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="tel" name="phone" placeholder="Phone" required>
+            <textarea name="message" placeholder="Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+</body>
+</html>
