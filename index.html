@@ -12,7 +12,6 @@
             font-family: 'Arial', sans-serif;
         }
 
-        /* Фиксированный хедер */
         header {
             background: #1a365d;
             padding: 1rem;
@@ -30,12 +29,6 @@
             align-items: center;
         }
 
-        .logo {
-            color: white;
-            font-size: 1.5rem;
-            text-decoration: none;
-        }
-
         .nav-links {
             display: flex;
             gap: 2rem;
@@ -46,24 +39,14 @@
             text-decoration: none;
         }
 
-        /* Основной контент */
         .hero {
             height: 80vh;
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-                        url('hero-bg.jpg') center/cover;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
             margin-top: 60px;
         }
 
-        /* Контактная форма внизу */
         .contact {
             padding: 4rem 2rem;
             background: #1a365d;
-            color: white;
         }
 
         .contact-form {
@@ -87,51 +70,29 @@
             border-radius: 5px;
             cursor: pointer;
         }
-
-        footer {
-            background: #2d3748;
-            color: white;
-            padding: 2rem;
-            text-align: center;
-        }
     </style>
 </head>
 <body>
-    <!-- Шапка -->
     <header>
         <nav>
-            <a href="#" class="logo">Handy Magic</a>
             <div class="nav-links">
-                <a href="#services">Services</a>
-                <a href="#contact">Contact</a>
+                <a href="#contact">Contact Us</a>
             </div>
         </nav>
     </header>
 
-    <!-- Основной контент -->
     <section class="hero">
-        <div>
-            <h1>Professional Handyman Services</h1>
-            <p>Free Estimates | Fully Insured</p>
-            <button>Book Now</button>
-        </div>
+        <!-- Пустой блок -->
     </section>
 
-    <!-- Форма внизу страницы -->
     <section id="contact" class="contact">
-        <h2>Contact Us</h2>
         <form class="contact-form" action="https://formspree.io/f/mvojnzqw" method="POST">
-            <input type="hidden" name="_replyto" value="magichandymen@gmail.com">
             <input type="text" name="name" placeholder="Name" required>
             <input type="email" name="email" placeholder="Email" required>
             <input type="tel" name="phone" placeholder="Phone" required>
-            <textarea name="message" rows="5" placeholder="Message" required></textarea>
+            <textarea name="message" placeholder="Message" required></textarea>
             <button type="submit">Send Message</button>
         </form>
     </section>
-
-    <footer>
-        <p>© 2023 Handy Magic. All rights reserved.</p>
-    </footer>
 </body>
 </html>
