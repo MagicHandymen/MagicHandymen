@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Handyman Services</title>
+    <title>Contact Form</title>
     <style>
-        /* Все предыдущие стили остаются без изменений */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
+            font-family: Arial, sans-serif;
         }
 
+        /* Фиксированный хедер */
         header {
             background: #1a365d;
             padding: 1rem;
@@ -22,8 +22,46 @@
             z-index: 1000;
         }
 
-        /* ... остальные стили ... */
+        .nav-links {
+            text-align: right;
+            padding-right: 2rem;
+        }
 
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Форма внизу страницы */
+        .contact {
+            padding: 4rem 2rem;
+            background: #1a365d;
+            color: white;
+            min-height: 100vh;
+            padding-top: 100px;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 0.8rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        button {
+            background: #e67e22;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -35,22 +73,9 @@
         </nav>
     </header>
 
-    <section class="hero">
-        <div>
-        </div>
-    </section>
-
     <section id="contact" class="contact">
-        <h2>Contact Us</h2>
-        <form class="contact-form" 
-              action="https://formspree.io/f/mwplnwgo" 
-              method="POST">
-            <!-- Добавьте эти скрытые поля -->
-            <input type="hidden" name="_subject" value="New Contact Request">
+        <form class="contact-form" action="https://formspree.io/f/mvojnzqw" method="POST">
             <input type="hidden" name="_replyto" value="magichandymen@gmail.com">
-            <input type="hidden" name="_language" value="en">
-            
-            <!-- Существующие поля формы -->
             <input type="text" name="name" placeholder="Name" required>
             <input type="email" name="email" placeholder="Email" required>
             <input type="tel" name="phone" placeholder="Phone" required>
@@ -58,9 +83,5 @@
             <button type="submit">Send Message</button>
         </form>
     </section>
-
-    <footer>
-        <p>© 2023 Handy Magic. All rights reserved.</p>
-    </footer>
 </body>
 </html>
