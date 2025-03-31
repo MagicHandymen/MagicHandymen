@@ -12,6 +12,7 @@
             font-family: 'Arial', sans-serif;
         }
 
+        /* Фиксированная шапка */
         header {
             background: #1a365d;
             position: fixed;
@@ -20,6 +21,7 @@
             z-index: 1000;
         }
 
+        /* Горизонтальное меню */
         .main-nav {
             display: flex;
             justify-content: center;
@@ -45,7 +47,7 @@
             color: #e67e22;
         }
 
-        /* Стили для секций */
+        /* Стили секций */
         section {
             padding: 100px 20px 40px;
             min-height: 100vh;
@@ -65,9 +67,10 @@
             color: white;
         }
 
+        /* Видео контейнер */
         .video-container {
             max-width: 800px;
-            margin: 0 auto;
+            margin: 20px auto;
         }
 
         .video-container iframe {
@@ -77,15 +80,47 @@
             border-radius: 10px;
         }
 
+        /* Стили формы */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        button {
+            background: #e67e22;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: #d35400;
+        }
+
+        /* Текстовые блоки */
+        .content-block {
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
         @media (max-width: 768px) {
-            .main-nav {
-                justify-content: flex-start;
-                padding: 0.8rem;
-            }
-            
             section {
                 padding: 80px 15px 30px;
-                scroll-margin-top: 60px;
             }
             
             .video-container iframe {
@@ -103,20 +138,57 @@
         </nav>
     </header>
 
+    <!-- Секция About Us -->
     <section id="about">
-        <h2>About Our Company</h2>
-        <!-- Контент -->
+        <div class="content-block">
+            <h2>About Our Company</h2>
+            <p>With over 15 years of experience in the home improvement industry, we pride ourselves on delivering top-quality handyman services. Our team of certified professionals is dedicated to providing reliable solutions for all your household needs.</p>
+            <br>
+            <h3>Why Choose Us?</h3>
+            <ul>
+                <li>Licensed and Insured</li>
+                <li>24/7 Emergency Service</li>
+                <li>Free On-Site Estimates</li>
+                <li>5-Year Workmanship Guarantee</li>
+            </ul>
+        </div>
     </section>
 
+    <!-- Секция Recent Jobs -->
     <section id="jobs">
         <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/7NQ3YB6M4Hk"></iframe>
+            <iframe 
+                src="https://www.youtube.com/embed/7NQ3YB6M4Hk" 
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
         </div>
-        <!-- Контент -->
+        <div class="content-block">
+            <h2>Recent Projects</h2>
+            <p>Watch our latest home renovation projects and see how we transform spaces. From kitchen remodels to bathroom upgrades, we handle projects of all sizes with precision and care.</p>
+            <br>
+            <h3>Featured Services:</h3>
+            <ul>
+                <li>Plumbing & Electrical Work</li>
+                <li>Drywall Installation & Repair</li>
+                <li>Tile Setting & Flooring</li>
+                <li>Custom Cabinetry</li>
+            </ul>
+        </div>
     </section>
 
+    <!-- Секция Contact -->
     <section id="contact">
-        <form class="contact-form"></form>
+        <div class="contact-form">
+            <h2>Contact Us</h2>
+            <form action="https://formspree.io/f/mwplnwgo" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Email Address" required>
+                <input type="tel" name="phone" placeholder="Phone Number" required>
+                <textarea name="message" placeholder="How can we help you?" rows="5" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
     </section>
 </body>
 </html>
