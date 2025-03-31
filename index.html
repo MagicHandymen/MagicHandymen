@@ -5,19 +5,154 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Handyman Services</title>
     <style>
-        /* Все предыдущие стили остаются без изменений */
-        
-        /* Добавляем отступы для секций */
-        #about { scroll-margin-top: 140px; }
-        #jobs { scroll-margin-top: 140px; }
-        #contact { scroll-margin-top: 140px; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        header {
+            background: #1a365d;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .top-nav {
+            padding: 1rem;
+            background: rgba(0,0,0,0.1);
+        }
+
+        .main-nav {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            padding: 1.5rem;
+            background: #142d54;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .main-nav a {
+            color: white;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .main-nav a:hover {
+            color: #e67e22;
+        }
+
+        /* Стили для секций */
+        #about {
+            padding: 8rem 2rem 4rem;
+            background: #f8f9fa;
+            min-height: 100vh;
+            scroll-margin-top: 140px;
+        }
+
+        #jobs {
+            padding: 4rem 2rem;
+            background: #fff url('hero-bg.jpg') center/cover;
+            min-height: 100vh;
+            scroll-margin-top: 140px;
+        }
+
+        #contact {
+            padding: 4rem 2rem;
+            background: #1a365d;
+            color: white;
+            min-height: 100vh;
+            scroll-margin-top: 140px;
+        }
+
+        .video-container {
+            width: 60%;
+            max-width: 800px;
+            margin: 2rem auto;
+        }
+
+        .video-container iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .video-description {
+            text-align: center;
+            margin: 2rem 0;
+            color: #333;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 0.8rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        button {
+            background: #e67e22;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: #d35400;
+        }
+
+        @media (max-width: 768px) {
+            .main-nav {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+                padding: 1rem;
+            }
+            
+            .video-container {
+                width: 100%;
+                padding: 0 1rem;
+            }
+            
+            .video-container iframe {
+                height: 250px;
+            }
+            
+            #about, #jobs, #contact {
+                padding: 7rem 1rem 2rem;
+            }
+        }
     </style>
 </head>
 <body>
     <header>
-        <nav class="top-nav">
-            <!-- Логотип можно добавить здесь -->
-        </nav>
+        <nav class="top-nav"></nav>
         <nav class="main-nav">
             <a href="#about">About Us</a>
             <a href="#jobs">Recent Jobs</a>
@@ -25,29 +160,33 @@
         </nav>
     </header>
 
-    <!-- Секция About Us -->
-    <section id="about" class="about">
-        <div class="about-content">
-            <h2>About Our Company</h2>
-            <p>With over 15 years of experience...</p>
-        </div>
+    <section id="about" class="about-content">
+        <h2>About Our Company</h2>
+        <p>With over 15 years of experience in home improvement services...</p>
+        <p>Licensed & Insured | 24/7 Emergency Service | Free Estimates</p>
     </section>
 
-    <!-- Секция Recent Jobs -->
-    <section id="jobs" class="hero">
+    <section id="jobs">
         <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/7NQ3YB6M4Hk"></iframe>
+            <iframe 
+                src="https://www.youtube.com/embed/7NQ3YB6M4Hk" 
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
         </div>
         <div class="video-description">
             <h2>Professional Handyman Services Demo</h2>
-            <p>Watch our experts in action...</p>
+            <p>Watch our experts in action! This video demonstrates our comprehensive range of home improvement services.</p>
         </div>
     </section>
 
-    <!-- Секция Contact Us -->
-    <section id="contact" class="contact">
+    <section id="contact">
         <form class="contact-form" action="https://formspree.io/f/mwplnwgo" method="POST">
-            <!-- Форма остается без изменений -->
+            <input type="text" name="name" placeholder="Name" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="tel" name="phone" placeholder="Phone" required>
+            <textarea name="message" placeholder="Message" rows="5" required></textarea>
+            <button type="submit">Send Message</button>
         </form>
     </section>
 </body>
