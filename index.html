@@ -12,7 +12,7 @@
       font-family: 'Arial', sans-serif;
     }
 
-    /* Шапка с фоновым изображением */
+    /* Шапка с фоном и навигацией */
     header {
       position: fixed;
       width: 100%;
@@ -20,14 +20,15 @@
       z-index: 1000;
       background: url('your-header.jpg') no-repeat center center;
       background-size: cover;
+      height: 250px; /* Пространство для логотипа */
     }
 
     .main-nav {
       display: flex;
       justify-content: center;
       gap: 3rem;
-      padding: 60px 15px 20px;
-      background: rgba(0, 0, 0, 0.4); /* Затемнение навигации */
+      padding: 180px 15px 20px; /* Сильно опущена вниз */
+      background: none;
     }
 
     .main-nav a {
@@ -44,14 +45,21 @@
     }
 
     section {
-      padding: 180px 20px 40px;
+      padding: 200px 20px 40px;
       min-height: 100vh;
       scroll-margin-top: 140px;
     }
 
-    /* Центральный блок — фон повторяется по вертикали */
+    /* Блок about с фоном, повторяющимся по мере прокрутки */
     #about {
-      background: url('your-middle.jpg') repeat-y center top;
+      background: url('your-middle.JPG') repeat-y center top;
+      background-size: cover;
+      color: white;
+    }
+
+    /* Блок contact тоже с фоном */
+    #contact {
+      background: url('your-footer.JPG') repeat-y center top;
       background-size: cover;
       color: white;
     }
@@ -60,11 +68,14 @@
       background: #fff;
     }
 
-    /* Нижний блок — фон повторяется по вертикали */
-    #contact {
-      background: url('your-footer.jpg') repeat-y center top;
-      background-size: cover;
+    .content-block {
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.6;
+      padding: 20px;
       color: white;
+      background: none;
+      border-radius: 0;
     }
 
     .video-container {
@@ -78,15 +89,6 @@
       border: none;
       border-radius: 10px;
       box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    }
-
-    .content-block {
-      max-width: 800px;
-      margin: 0 auto;
-      line-height: 1.6;
-      padding: 20px;
-      background: rgba(0, 0, 0, 0.4);
-      border-radius: 10px;
     }
 
     .contact-form {
@@ -122,22 +124,20 @@
     }
 
     @media (max-width: 768px) {
-      section {
-        padding: 160px 15px 30px;
-        scroll-margin-top: 120px;
-      }
-
       .main-nav {
         gap: 1.5rem;
-        padding: 50px 10px 15px;
-        justify-content: space-around;
+        padding: 160px 10px 15px;
       }
 
       .video-container iframe {
         height: 250px;
       }
 
-      .content-block,
+      .content-block {
+        padding: 10px;
+        text-align: center;
+      }
+
       .contact-form {
         background: rgba(0, 0, 0, 0.6);
       }
@@ -164,7 +164,7 @@
     <div class="video-container">
       <iframe src="https://www.youtube.com/embed/7NQ3YB6M4Hk"></iframe>
     </div>
-    <div class="content-block">
+    <div class="content-block" style="color: black;">
       <h2>Recent Projects</h2>
       <p>Our latest works...</p>
     </div>
