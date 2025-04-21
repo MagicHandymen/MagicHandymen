@@ -13,45 +13,35 @@
     }
 
     body {
-      background-color: #000; /* Черный фон для всего документа */
+      background-color: #000; /* Черный фон всего документа */
     }
 
-    /* Основной контейнер шапки */
+    /* Фиксированный контейнер шапки и навигации */
     .header-wrapper {
       position: fixed;
       top: 0;
       width: 100%;
       z-index: 1000;
       background: transparent;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
     }
 
-    /* Внутренний контейнер с ограниченной шириной */
-    .header-container {
+    /* Основная шапка */
+    header {
       width: 100%;
-      max-width: 1200px;
+      height: 160px; /* Уменьшенная высота шапки */
+      background: url('your-header.jpg') center top no-repeat;
+      background-size: cover;
       position: relative;
     }
 
-    /* Шапка с фоном */
-    header {
-      width: 100%;
-      height: 199px;
-      background: url('your-header.jpg') center top no-repeat;
-      background-size: contain;
-      margin: 0 auto;
-    }
-
-    /* Навигация */
+    /* Навигация - прикреплена к низу шапки */
     .main-nav {
       width: 100%;
       display: flex;
       justify-content: center;
       gap: 2rem;
       padding: 15px;
-      background: rgba(0, 0, 0, 0.3);
+      background: rgba(0, 0, 0, 0.5);
       position: absolute;
       bottom: 0;
       left: 0;
@@ -70,23 +60,25 @@
       color: #e67e22;
     }
 
-    /* Основные секции */
+    /* Основной контент */
+    main {
+      margin-top: 210px; /* Высота шапки + навигации */
+    }
+
     section {
-      padding: 100px 20px; /* Уменьшили верхний отступ */
       min-height: 100vh;
-      scroll-margin-top: 140px;
-      margin-top: 199px; /* Высота шапки */
+      padding: 40px 20px;
+      scroll-margin-top: 210px; /* Для якорных ссылок */
     }
 
     #about, #jobs, #contact {
       background: url('your-middle.JPG') repeat-y center top / cover;
       color: white;
-      margin-top: 0; /* Убираем отступ между секциями */
     }
 
-    /* Первая секция - убираем margin-top */
-    #about {
-      margin-top: 199px; /* Только для первой секции */
+    /* Убираем промежутки между секциями */
+    section + section {
+      margin-top: -1px; /* Перекрываем границы */
     }
 
     .content-block {
@@ -142,6 +134,10 @@
     }
 
     @media (max-width: 768px) {
+      header {
+        height: 120px;
+      }
+      
       .main-nav {
         flex-wrap: wrap;
         gap: 1rem;
@@ -152,26 +148,17 @@
         font-size: 12px;
       }
 
-      section {
-        padding: 80px 15px;
-        margin-top: 150px;
+      main {
+        margin-top: 160px;
       }
 
-      #about {
-        margin-top: 150px;
+      section {
+        scroll-margin-top: 160px;
+        padding: 30px 15px;
       }
 
       .video-container iframe {
         height: 250px;
-      }
-
-      .content-block {
-        padding: 10px;
-        text-align: center;
-      }
-
-      .contact-form {
-        background: rgba(0, 0, 0, 0.6);
       }
     }
   </style>
@@ -179,42 +166,43 @@
 <body>
 
   <div class="header-wrapper">
-    <div class="header-container">
-      <header></header>
+    <header>
       <nav class="main-nav">
         <a href="#about">About Us</a>
         <a href="#jobs">Recent Jobs</a>
         <a href="#contact">Contact</a>
       </nav>
-    </div>
+    </header>
   </div>
 
-  <section id="about">
-    <div class="content-block">
-      <h2>About Our Company</h2>
-      <p>With over 15 years of experience...</p>
-    </div>
-  </section>
+  <main>
+    <section id="about">
+      <div class="content-block">
+        <h2>About Our Company</h2>
+        <p>With over 15 years of experience...</p>
+      </div>
+    </section>
 
-  <section id="jobs">
-    <div class="video-container">
-      <iframe src="https://www.youtube.com/embed/7NQ3YB6M4Hk"></iframe>
-    </div>
-    <div class="content-block">
-      <h2>Recent Projects</h2>
-      <p>Our latest works...</p>
-    </div>
-  </section>
+    <section id="jobs">
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/7NQ3YB6M4Hk"></iframe>
+      </div>
+      <div class="content-block">
+        <h2>Recent Projects</h2>
+        <p>Our latest works...</p>
+      </div>
+    </section>
 
-  <section id="contact">
-    <form class="contact-form" action="https://formspree.io/f/mwplnwgo" method="POST">
-      <input type="text" name="name" placeholder="Name" required>
-      <input type="email" name="email" placeholder="Email" required>
-      <input type="tel" name="phone" placeholder="Phone" required>
-      <textarea name="message" placeholder="Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-  </section>
+    <section id="contact">
+      <form class="contact-form" action="https://formspree.io/f/mwplnwgo" method="POST">
+        <input type="text" name="name" placeholder="Name" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="tel" name="phone" placeholder="Phone" required>
+        <textarea name="message" placeholder="Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+  </main>
 
 </body>
 </html>
