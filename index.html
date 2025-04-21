@@ -12,26 +12,25 @@
       font-family: 'Arial', sans-serif;
     }
 
-    /* Шапка */
+    /* Шапка с фоновым изображением */
     header {
-      position: fixed;
       width: 100%;
-      top: 0;
-      left: 0;
-      z-index: 1000;
-      background: url('header.jpg') no-repeat center top;
+      height: 240px;
+      background: url('header.jpg') no-repeat center center;
       background-size: cover;
-      height: 260px;
     }
 
-    /* Навигация */
+    /* Навигация — фиксированная и всегда сверху */
     .main-nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
       display: flex;
       justify-content: center;
       gap: 2rem;
-      padding: 20px 10px;
-      margin-top: 180px;
-      background: transparent; /* Убрано затемнение */
+      padding: 15px;
+      background: transparent;
+      z-index: 1000;
     }
 
     .main-nav a {
@@ -47,14 +46,14 @@
       color: #e67e22;
     }
 
-    /* Отступ под фиксированной шапкой */
+    /* Отступ под навигацией + шапкой */
     section {
-      padding: 280px 20px 40px;
+      padding: 260px 20px 40px;
       min-height: 100vh;
       scroll-margin-top: 140px;
     }
 
-    /* Общий фон */
+    /* Фон и текст */
     #about, #jobs, #contact {
       background: url('your-middle.JPG') repeat-y center top;
       background-size: cover;
@@ -115,14 +114,17 @@
 
     @media (max-width: 768px) {
       .main-nav {
-        gap: 1rem;
-        padding: 15px 5px;
-        margin-top: 160px;
         flex-wrap: wrap;
+        gap: 1rem;
+        padding: 10px;
       }
 
       .main-nav a {
         font-size: 12px;
+      }
+
+      section {
+        padding: 240px 15px 30px;
       }
 
       .video-container iframe {
@@ -141,13 +143,14 @@
   </style>
 </head>
 <body>
-  <header>
-    <nav class="main-nav">
-      <a href="#about">About Us</a>
-      <a href="#jobs">Recent Jobs</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+
+  <nav class="main-nav">
+    <a href="#about">About Us</a>
+    <a href="#jobs">Recent Jobs</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <header></header>
 
   <section id="about">
     <div class="content-block">
@@ -175,5 +178,6 @@
       <button type="submit">Send Message</button>
     </form>
   </section>
+
 </body>
 </html>
