@@ -12,29 +12,34 @@
       font-family: 'Arial', sans-serif;
     }
 
-    /* Шапка — не растягивается, центрируется, не выходит за границы */
-    header {
+    /* Общий контейнер для шапки и навигации, который будет фиксированным */
+    .header-container {
+      position: fixed;
+      top: 0;
       width: 100%;
+      z-index: 1000;
       max-width: 1920px;
-      height: 199px;
-      margin: 0 auto;
-      background: url('your-header.jpg') center top no-repeat;
-      background-size: contain;
-      background-color: #000; /* если изображение не во всю ширину */
+      left: 50%;
+      transform: translateX(-50%);
     }
 
-    /* Навигация — полупрозрачная и фиксируется при скролле */
+    /* Шапка */
+    header {
+      width: 100%;
+      height: 199px;
+      background: url('your-header.jpg') center top no-repeat;
+      background-size: contain;
+      background-color: #000;
+    }
+
+    /* Навигация - полностью прозрачная */
     .main-nav {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
       width: 100%;
       display: flex;
       justify-content: center;
       gap: 2rem;
       padding: 15px;
-      background: rgba(0, 0, 0, 0.5);
-      backdrop-filter: blur(6px);
+      background: transparent;
     }
 
     .main-nav a {
@@ -44,16 +49,22 @@
       font-weight: 500;
       font-size: 14px;
       transition: color 0.3s;
+      text-shadow: 0 0 5px rgba(0,0,0,0.5);
     }
 
     .main-nav a:hover {
       color: #e67e22;
     }
 
+    /* Основное содержимое - добавляем отступ сверху равный высоте шапки + навигации */
+    main {
+      margin-top: 234px; /* 199px (шапка) + 35px (навигация) */
+    }
+
     section {
       padding: 60px 20px 40px;
       min-height: 100vh;
-      scroll-margin-top: 80px;
+      scroll-margin-top: 234px;
     }
 
     #about, #jobs, #contact {
@@ -125,8 +136,13 @@
         font-size: 12px;
       }
 
+      main {
+        margin-top: 220px; /* Уменьшаем отступ для мобильных */
+      }
+
       section {
         padding: 50px 15px 30px;
+        scroll-margin-top: 220px;
       }
 
       .video-container iframe {
@@ -146,40 +162,43 @@
 </head>
 <body>
 
-  <header></header>
+  <div class="header-container">
+    <header></header>
+    <nav class="main-nav">
+      <a href="#about">About Us</a>
+      <a href="#jobs">Recent Jobs</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
 
-  <nav class="main-nav">
-    <a href="#about">About Us</a>
-    <a href="#jobs">Recent Jobs</a>
-    <a href="#contact">Contact</a>
-  </nav>
+  <main>
+    <section id="about">
+      <div class="content-block">
+        <h2>About Our Company</h2>
+        <p>With over 15 years of experience...</p>
+      </div>
+    </section>
 
-  <section id="about">
-    <div class="content-block">
-      <h2>About Our Company</h2>
-      <p>With over 15 years of experience...</p>
-    </div>
-  </section>
+    <section id="jobs">
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/7NQ3YB6M4Hk"></iframe>
+      </div>
+      <div class="content-block">
+        <h2>Recent Projects</h2>
+        <p>Our latest works...</p>
+      </div>
+    </section>
 
-  <section id="jobs">
-    <div class="video-container">
-      <iframe src="https://www.youtube.com/embed/7NQ3YB6M4Hk"></iframe>
-    </div>
-    <div class="content-block">
-      <h2>Recent Projects</h2>
-      <p>Our latest works...</p>
-    </div>
-  </section>
-
-  <section id="contact">
-    <form class="contact-form" action="https://formspree.io/f/mwplnwgo" method="POST">
-      <input type="text" name="name" placeholder="Name" required>
-      <input type="email" name="email" placeholder="Email" required>
-      <input type="tel" name="phone" placeholder="Phone" required>
-      <textarea name="message" placeholder="Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-  </section>
+    <section id="contact">
+      <form class="contact-form" action="https://formspree.io/f/mwplnwgo" method="POST">
+        <input type="text" name="name" placeholder="Name" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="tel" name="phone" placeholder="Phone" required>
+        <textarea name="message" placeholder="Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+  </main>
 
 </body>
 </html>
