@@ -12,22 +12,23 @@
       font-family: 'Arial', sans-serif;
     }
 
-    /* Шапка с фоном и навигацией */
+    /* Шапка с корректной картинкой */
     header {
       position: fixed;
       width: 100%;
       top: 0;
       z-index: 1000;
-      background: url('your-header.jpg') no-repeat center center;
-      background-size: cover;
-      height: 250px; /* Пространство для логотипа */
+      height: 220px;
+      background: url('your-header.JPG') center top no-repeat;
+      background-size: contain;
+      background-color: black;
     }
 
     .main-nav {
       display: flex;
       justify-content: center;
-      gap: 3rem;
-      padding: 180px 15px 20px; /* Сильно опущена вниз */
+      gap: 2rem;
+      padding: 160px 10px 15px;
       background: none;
     }
 
@@ -36,7 +37,7 @@
       text-decoration: none;
       text-transform: uppercase;
       font-weight: 500;
-      font-size: 16px;
+      font-size: 14px;
       transition: color 0.3s;
     }
 
@@ -50,22 +51,11 @@
       scroll-margin-top: 140px;
     }
 
-    /* Блок about с фоном, повторяющимся по мере прокрутки */
-    #about {
+    /* Общий фон для about, jobs и contact */
+    #about, #jobs, #contact {
       background: url('your-middle.JPG') repeat-y center top;
       background-size: cover;
       color: white;
-    }
-
-    /* Блок contact тоже с фоном */
-    #contact {
-      background: url('your-footer.JPG') repeat-y center top;
-      background-size: cover;
-      color: white;
-    }
-
-    #jobs {
-      background: #fff;
     }
 
     .content-block {
@@ -75,7 +65,6 @@
       padding: 20px;
       color: white;
       background: none;
-      border-radius: 0;
     }
 
     .video-container {
@@ -125,8 +114,12 @@
 
     @media (max-width: 768px) {
       .main-nav {
-        gap: 1.5rem;
-        padding: 160px 10px 15px;
+        gap: 1rem;
+        padding: 150px 5px 10px;
+      }
+
+      .main-nav a {
+        font-size: 12px;
       }
 
       .video-container iframe {
@@ -164,7 +157,7 @@
     <div class="video-container">
       <iframe src="https://www.youtube.com/embed/7NQ3YB6M4Hk"></iframe>
     </div>
-    <div class="content-block" style="color: black;">
+    <div class="content-block">
       <h2>Recent Projects</h2>
       <p>Our latest works...</p>
     </div>
