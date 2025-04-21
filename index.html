@@ -22,29 +22,11 @@
       background-size: cover;
     }
 
-    .top-bar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 20px;
-      background: rgba(0, 0, 0, 0.4); /* Затемнение для читабельности текста */
-      color: white;
-    }
-
-    .logo {
-      font-size: 24px;
-      font-weight: bold;
-    }
-
-    .phone {
-      font-size: 18px;
-    }
-
     .main-nav {
       display: flex;
       justify-content: center;
       gap: 3rem;
-      padding: 15px;
+      padding: 60px 15px 20px;
       background: rgba(0, 0, 0, 0.4); /* Затемнение навигации */
     }
 
@@ -67,9 +49,9 @@
       scroll-margin-top: 140px;
     }
 
-    /* Средний блок — фон картинкой */
+    /* Центральный блок — фон повторяется по вертикали */
     #about {
-      background: url('your-middle.jpg') no-repeat center center;
+      background: url('your-middle.jpg') repeat-y center top;
       background-size: cover;
       color: white;
     }
@@ -78,9 +60,9 @@
       background: #fff;
     }
 
-    /* Нижний блок — фон картинкой */
+    /* Нижний блок — фон повторяется по вертикали */
     #contact {
-      background: url('your-footer.jpg') no-repeat center center;
+      background: url('your-footer.jpg') repeat-y center top;
       background-size: cover;
       color: white;
     }
@@ -103,7 +85,7 @@
       margin: 0 auto;
       line-height: 1.6;
       padding: 20px;
-      background: rgba(0, 0, 0, 0.4); /* для лучшей читаемости текста */
+      background: rgba(0, 0, 0, 0.4);
       border-radius: 10px;
     }
 
@@ -111,7 +93,7 @@
       max-width: 600px;
       margin: 0 auto;
       padding: 20px;
-      background: rgba(0, 0, 0, 0.5); /* затемнение формы на фоне */
+      background: rgba(0, 0, 0, 0.5);
       border-radius: 10px;
     }
 
@@ -147,24 +129,12 @@
 
       .main-nav {
         gap: 1.5rem;
-        padding: 10px;
+        padding: 50px 10px 15px;
         justify-content: space-around;
       }
 
       .video-container iframe {
         height: 250px;
-      }
-
-      .top-bar {
-        padding: 8px 15px;
-      }
-
-      .logo {
-        font-size: 20px;
-      }
-
-      .phone {
-        font-size: 16px;
       }
 
       .content-block,
@@ -176,10 +146,6 @@
 </head>
 <body>
   <header>
-    <div class="top-bar">
-      <div class="logo">HandymanPro</div>
-      <div class="phone">☎ 555-123-4567</div>
-    </div>
     <nav class="main-nav">
       <a href="#about">About Us</a>
       <a href="#jobs">Recent Jobs</a>
