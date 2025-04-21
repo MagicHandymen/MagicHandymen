@@ -12,25 +12,21 @@
       font-family: 'Arial', sans-serif;
     }
 
-    /* Шапка с фоном */
-    header {
-      position: fixed;
+    /* Шапка с фоном, ТОЛЬКО header.jpg */
+    .top-banner {
       width: 100%;
-      top: 0;
-      z-index: 1000;
       height: 220px;
       background: url('your-header.jpg') center top no-repeat;
-      background-size: contain;
-      background-color: black;
+      background-size: cover;
     }
 
-    /* Навигация — уменьшена по высоте и с нужным фоном */
+    /* Навигационная строка — ОТДЕЛЬНО и с фоном из your-middle.JPG */
     .main-nav {
       display: flex;
       justify-content: center;
       gap: 2rem;
-      padding: 110px 10px 10px;
-      background: url('your-middle.JPG') center top no-repeat;
+      padding: 15px 10px;
+      background: url('your-middle.JPG') center center repeat;
       background-size: cover;
     }
 
@@ -48,12 +44,12 @@
     }
 
     section {
-      padding: 200px 20px 40px;
+      padding: 160px 20px 40px;
       min-height: 100vh;
       scroll-margin-top: 140px;
     }
 
-    /* Общий фон для секций */
+    /* Секции с фоном your-middle.JPG */
     #about, #jobs, #contact {
       background: url('your-middle.JPG') repeat-y center top;
       background-size: cover;
@@ -65,8 +61,8 @@
       margin: 0 auto;
       line-height: 1.6;
       padding: 20px;
-      color: white;
       background: none;
+      color: white;
     }
 
     .video-container {
@@ -117,7 +113,7 @@
     @media (max-width: 768px) {
       .main-nav {
         gap: 1rem;
-        padding: 100px 5px 8px;
+        padding: 12px 5px;
       }
 
       .main-nav a {
@@ -140,14 +136,18 @@
   </style>
 </head>
 <body>
-  <header>
-    <nav class="main-nav">
-      <a href="#about">About Us</a>
-      <a href="#jobs">Recent Jobs</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
 
+  <!-- Шапка -->
+  <div class="top-banner"></div>
+
+  <!-- Навигация -->
+  <nav class="main-nav">
+    <a href="#about">About Us</a>
+    <a href="#jobs">Recent Jobs</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- Секции -->
   <section id="about">
     <div class="content-block">
       <h2>About Our Company</h2>
