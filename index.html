@@ -12,7 +12,7 @@
       font-family: 'Arial', sans-serif;
     }
 
-    /* Шапка с корректной картинкой */
+    /* Шапка с фоном */
     header {
       position: fixed;
       width: 100%;
@@ -24,12 +24,14 @@
       background-color: black;
     }
 
+    /* Навигация — уменьшена по высоте и с нужным фоном */
     .main-nav {
       display: flex;
       justify-content: center;
       gap: 2rem;
-      padding: 160px 10px 15px;
-      background: none;
+      padding: 110px 10px 10px;
+      background: url('your-middle.JPG') center top no-repeat;
+      background-size: cover;
     }
 
     .main-nav a {
@@ -51,7 +53,7 @@
       scroll-margin-top: 140px;
     }
 
-    /* Общий фон для about, jobs и contact */
+    /* Общий фон для секций */
     #about, #jobs, #contact {
       background: url('your-middle.JPG') repeat-y center top;
       background-size: cover;
@@ -115,7 +117,7 @@
     @media (max-width: 768px) {
       .main-nav {
         gap: 1rem;
-        padding: 150px 5px 10px;
+        padding: 100px 5px 8px;
       }
 
       .main-nav a {
