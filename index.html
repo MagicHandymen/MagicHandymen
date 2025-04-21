@@ -23,25 +23,34 @@
       width: 100%;
       z-index: 1000;
       background: transparent;
+      display: flex;
+      justify-content: center;
     }
 
-    /* Основная шапка */
-    header {
+    /* Основная шапка с ограничением ширины */
+    .header-container {
       width: 100%;
-      height: 180px; /* Общая высота шапки */
-      background: url('your-header.jpg') center top no-repeat;
-      background-size: cover;
+      max-width: 1200px;
       position: relative;
     }
 
-    /* Навигация - фиксирована внизу шапки */
+    /* Шапка с фоном */
+    header {
+      width: 100%;
+      height: 180px;
+      background: url('your-header.jpg') center top no-repeat;
+      background-size: contain;
+      margin: 0 auto;
+    }
+
+    /* Навигация - прозрачная, без затемнения */
     .main-nav {
       width: 100%;
       display: flex;
       justify-content: center;
       gap: 2rem;
       padding: 15px;
-      background: rgba(0, 0, 0, 0.5);
+      background: transparent; /* Убрали затемнение */
       position: absolute;
       bottom: 0;
       left: 0;
@@ -54,6 +63,7 @@
       font-weight: 500;
       font-size: 14px;
       transition: color 0.3s;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.5); /* Для лучшей читаемости */
     }
 
     .main-nav a:hover {
@@ -62,7 +72,7 @@
 
     /* Основной контент */
     main {
-      margin-top: 180px; /* Равно высоте header */
+      margin-top: 180px;
     }
 
     section {
@@ -137,6 +147,10 @@
     }
 
     @media (max-width: 768px) {
+      .header-container {
+        padding: 0 15px;
+      }
+      
       header {
         height: 140px;
       }
@@ -168,13 +182,15 @@
 <body>
 
   <div class="header-wrapper">
-    <header>
-      <nav class="main-nav">
-        <a href="#about">About Us</a>
-        <a href="#jobs">Recent Jobs</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </header>
+    <div class="header-container">
+      <header>
+        <nav class="main-nav">
+          <a href="#about">About Us</a>
+          <a href="#jobs">Recent Jobs</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </header>
+    </div>
   </div>
 
   <main>
