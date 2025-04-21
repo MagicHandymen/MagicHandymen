@@ -82,6 +82,15 @@
       background: url('your-middle.JPG') repeat-y center top / cover;
       color: white;
       margin-top: -20px; /* Поднимаем секцию вверх */
+      scroll-margin-top: 180px; /* Компенсация для фиксированной шапки */
+    }
+
+    /* Якорь для точного позиционирования */
+    .section-anchor {
+      display: block;
+      position: relative;
+      top: -180px; /* Высота шапки + навигации */
+      visibility: hidden;
     }
 
     /* Первая секция с дополнительным отступом */
@@ -167,6 +176,11 @@
       section {
         padding: 40px 15px;
         margin-top: -15px;
+        scroll-margin-top: 140px;
+      }
+
+      .section-anchor {
+        top: -140px;
       }
 
       #about {
@@ -195,6 +209,7 @@
 
   <main>
     <section id="about">
+      <span class="section-anchor" id="about-anchor"></span>
       <div class="content-block">
         <h2>About Our Company</h2>
         <p>With over 15 years of experience...</p>
@@ -202,6 +217,7 @@
     </section>
 
     <section id="jobs">
+      <span class="section-anchor" id="jobs-anchor"></span>
       <div class="video-container">
         <iframe src="https://www.youtube.com/embed/7NQ3YB6M4Hk"></iframe>
       </div>
@@ -212,6 +228,7 @@
     </section>
 
     <section id="contact">
+      <span class="section-anchor" id="contact-anchor"></span>
       <form class="contact-form" action="https://formspree.io/f/mwplnwgo" method="POST">
         <input type="text" name="name" placeholder="Name" required>
         <input type="email" name="email" placeholder="Email" required>
@@ -222,5 +239,21 @@
     </section>
   </main>
 
+  <script>
+    // Корректировка якорных ссылок
+    document.querySelectorAll('.main-nav a').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetAnchor = document.querySelector(`${targetId}-anchor`);
+        if (targetAnchor) {
+          window.scrollTo({
+            top: targetAnchor.offsetTop,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  </script>
 </body>
 </html>
