@@ -12,7 +12,11 @@
       font-family: 'Arial', sans-serif;
     }
 
-    /* Основной контейнер шапки (фиксированный) */
+    body {
+      background-color: #000; /* Черный фон для всего документа */
+    }
+
+    /* Основной контейнер шапки */
     .header-wrapper {
       position: fixed;
       top: 0;
@@ -40,14 +44,14 @@
       margin: 0 auto;
     }
 
-    /* Навигация - теперь абсолютно позиционирована внизу шапки */
+    /* Навигация */
     .main-nav {
       width: 100%;
       display: flex;
       justify-content: center;
       gap: 2rem;
       padding: 15px;
-      background: rgba(0, 0, 0, 0.3); /* Полупрозрачный фон для лучшей читаемости */
+      background: rgba(0, 0, 0, 0.3);
       position: absolute;
       bottom: 0;
       left: 0;
@@ -66,19 +70,23 @@
       color: #e67e22;
     }
 
-    /* Отступ для основного контента (высота шапки + навигации) */
+    /* Основные секции */
     section {
-      padding: 300px 20px 40px;
+      padding: 100px 20px; /* Уменьшили верхний отступ */
       min-height: 100vh;
       scroll-margin-top: 140px;
       margin-top: 199px; /* Высота шапки */
     }
 
-    /* Остальные стили без изменений */
     #about, #jobs, #contact {
-      background: url('your-middle.JPG') repeat-y center top;
-      background-size: cover;
+      background: url('your-middle.JPG') repeat-y center top / cover;
       color: white;
+      margin-top: 0; /* Убираем отступ между секциями */
+    }
+
+    /* Первая секция - убираем margin-top */
+    #about {
+      margin-top: 199px; /* Только для первой секции */
     }
 
     .content-block {
@@ -145,8 +153,12 @@
       }
 
       section {
-        padding: 280px 15px 30px;
-        margin-top: 150px; /* Уменьшенный отступ для мобильных */
+        padding: 80px 15px;
+        margin-top: 150px;
+      }
+
+      #about {
+        margin-top: 150px;
       }
 
       .video-container iframe {
