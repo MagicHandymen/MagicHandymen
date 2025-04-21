@@ -12,36 +12,36 @@
       font-family: 'Arial', sans-serif;
     }
 
-    /* Обёртка шапки + навигации */
+    /* Обёртка шапки */
     .header-wrapper {
       position: fixed;
       top: 0;
       width: 100%;
       z-index: 1000;
-      background: #000; /* Добавляем фон на всякий случай */
+      background: transparent; /* Убедимся, что фон прозрачный */
     }
 
+    /* Шапка с ограниченной шириной */
     header {
       width: 100%;
-      max-width: 100%;
+      max-width: 100vw; /* Ограничиваем ширину видимой области */
       height: 199px;
       background: url('your-header.jpg') center top no-repeat;
       background-size: cover;
       margin: 0 auto;
-      padding: 0 20px; /* Добавляем отступы по бокам */
-      box-sizing: border-box;
+      overflow: hidden; /* Обрезаем фон, если он выходит за границы */
     }
 
+    /* Навигация (прозрачная) */
     .main-nav {
       width: 100%;
-      max-width: 100%;
+      max-width: 100vw; /* Ограничиваем ширину */
       display: flex;
       justify-content: center;
       gap: 2rem;
       padding: 15px;
-      background: transparent;
+      background: transparent !important; /* Принудительно прозрачный */
       margin: 0 auto;
-      box-sizing: border-box;
     }
 
     .main-nav a {
@@ -57,8 +57,9 @@
       color: #e67e22;
     }
 
+    /* Остальные стили без изменений */
     section {
-      padding: 300px 20px 40px; /* отступ под фиксированную шапку */
+      padding: 300px 20px 40px;
       min-height: 100vh;
       scroll-margin-top: 140px;
     }
