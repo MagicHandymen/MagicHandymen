@@ -12,7 +12,7 @@
       font-family: 'Arial', sans-serif;
     }
 
-    /* Основные настройки шапки */
+    /* Основной контейнер шапки (фиксированный) */
     .header-wrapper {
       position: fixed;
       top: 0;
@@ -21,13 +21,14 @@
       background: transparent;
       display: flex;
       flex-direction: column;
-      align-items: center; /* Центрируем содержимое */
+      align-items: center;
     }
 
-    /* Контейнер для header и nav с ограниченной шириной */
+    /* Внутренний контейнер с ограниченной шириной */
     .header-container {
       width: 100%;
-      max-width: 1200px; /* Ограничиваем максимальную ширину */
+      max-width: 1200px;
+      position: relative;
     }
 
     /* Шапка с фоном */
@@ -35,19 +36,21 @@
       width: 100%;
       height: 199px;
       background: url('your-header.jpg') center top no-repeat;
-      background-size: contain; /* Сохраняем пропорции изображения */
+      background-size: contain;
       margin: 0 auto;
-      position: relative;
     }
 
-    /* Навигация */
+    /* Навигация - теперь абсолютно позиционирована внизу шапки */
     .main-nav {
       width: 100%;
       display: flex;
       justify-content: center;
       gap: 2rem;
       padding: 15px;
-      background: transparent;
+      background: rgba(0, 0, 0, 0.3); /* Полупрозрачный фон для лучшей читаемости */
+      position: absolute;
+      bottom: 0;
+      left: 0;
     }
 
     .main-nav a {
@@ -63,13 +66,15 @@
       color: #e67e22;
     }
 
-    /* Остальные стили остаются без изменений */
+    /* Отступ для основного контента (высота шапки + навигации) */
     section {
       padding: 300px 20px 40px;
       min-height: 100vh;
       scroll-margin-top: 140px;
+      margin-top: 199px; /* Высота шапки */
     }
 
+    /* Остальные стили без изменений */
     #about, #jobs, #contact {
       background: url('your-middle.JPG') repeat-y center top;
       background-size: cover;
@@ -141,6 +146,7 @@
 
       section {
         padding: 280px 15px 30px;
+        margin-top: 150px; /* Уменьшенный отступ для мобильных */
       }
 
       .video-container iframe {
@@ -171,7 +177,6 @@
     </div>
   </div>
 
-  <!-- Остальное содержимое без изменений -->
   <section id="about">
     <div class="content-block">
       <h2>About Our Company</h2>
