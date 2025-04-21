@@ -5,36 +5,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Handyman Services</title>
   <style>
-    * {
+    html, body {
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
+      overflow-x: hidden;
       font-family: 'Arial', sans-serif;
     }
 
-    /* Обёртка шапки + навигации */
-    .header-wrapper {
+    /* Фиксированный контейнер для шапки и навигации */
+    .header-container {
       position: fixed;
       top: 0;
       width: 100%;
       z-index: 1000;
     }
 
+    /* Шапка — теперь без черного фона по умолчанию */
     header {
       width: 100%;
-      max-width: 100%;
       height: 199px;
       background: url('your-header.jpg') center top no-repeat;
-      background-size: cover;
+      background-size: cover; /* Изменил на cover, чтобы изображение заполняло всю шапку */
+      margin: 0;
     }
 
+    /* Навигация — абсолютно прозрачная и прижатая к шапке */
     .main-nav {
       width: 100%;
       display: flex;
       justify-content: center;
       gap: 2rem;
-      padding: 15px;
-      background: transparent;
+      padding: 15px 0; /* Убрал боковые отступы */
+      background: transparent !important; /* Важно: полностью прозрачный фон */
+      margin: 0;
     }
 
     .main-nav a {
@@ -44,16 +47,22 @@
       font-weight: 500;
       font-size: 14px;
       transition: color 0.3s;
+      text-shadow: 0 0 5px rgba(0, 0, 0, 0.7); /* Улучшает читаемость текста */
     }
 
     .main-nav a:hover {
       color: #e67e22;
     }
 
+    /* Основной контент — сдвигаем вниз на высоту шапки + навигации */
+    main {
+      margin-top: 234px; /* 199px (шапка) + 35px (навигация) */
+    }
+
     section {
-      padding: 300px 20px 40px; /* отступ под фиксированную шапку */
+      padding: 60px 20px 40px;
       min-height: 100vh;
-      scroll-margin-top: 140px;
+      scroll-margin-top: 234px; /* Компенсирует фиксированную шапку */
     }
 
     #about, #jobs, #contact {
@@ -62,6 +71,7 @@
       color: white;
     }
 
+    /* Остальные стили остаются без изменений */
     .content-block {
       max-width: 800px;
       margin: 0 auto;
@@ -79,7 +89,7 @@
       height: 450px;
       border: none;
       border-radius: 10px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     }
 
     .contact-form {
@@ -118,35 +128,32 @@
       .main-nav {
         flex-wrap: wrap;
         gap: 1rem;
-        padding: 10px;
+        padding: 10px 0;
       }
 
       .main-nav a {
         font-size: 12px;
       }
 
+      main {
+        margin-top: 220px;
+      }
+
       section {
-        padding: 280px 15px 30px;
+        padding: 50px 15px 30px;
+        scroll-margin-top: 220px;
       }
 
       .video-container iframe {
         height: 250px;
-      }
-
-      .content-block {
-        padding: 10px;
-        text-align: center;
-      }
-
-      .contact-form {
-        background: rgba(0, 0, 0, 0.6);
       }
     }
   </style>
 </head>
 <body>
 
-  <div class="header-wrapper">
+  <!-- Контейнер для шапки и навигации -->
+  <div class="header-container">
     <header></header>
     <nav class="main-nav">
       <a href="#about">About Us</a>
@@ -155,32 +162,35 @@
     </nav>
   </div>
 
-  <section id="about">
-    <div class="content-block">
-      <h2>About Our Company</h2>
-      <p>With over 15 years of experience...</p>
-    </div>
-  </section>
+  <!-- Основное содержимое -->
+  <main>
+    <section id="about">
+      <div class="content-block">
+        <h2>About Our Company</h2>
+        <p>With over 15 years of experience...</p>
+      </div>
+    </section>
 
-  <section id="jobs">
-    <div class="video-container">
-      <iframe src="https://www.youtube.com/embed/7NQ3YB6M4Hk"></iframe>
-    </div>
-    <div class="content-block">
-      <h2>Recent Projects</h2>
-      <p>Our latest works...</p>
-    </div>
-  </section>
+    <section id="jobs">
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/7NQ3YB6M4Hk"></iframe>
+      </div>
+      <div class="content-block">
+        <h2>Recent Projects</h2>
+        <p>Our latest works...</p>
+      </div>
+    </section>
 
-  <section id="contact">
-    <form class="contact-form" action="https://formspree.io/f/mwplnwgo" method="POST">
-      <input type="text" name="name" placeholder="Name" required>
-      <input type="email" name="email" placeholder="Email" required>
-      <input type="tel" name="phone" placeholder="Phone" required>
-      <textarea name="message" placeholder="Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-  </section>
+    <section id="contact">
+      <form class="contact-form" action="https://formspree.io/f/mwplnwgo" method="POST">
+        <input type="text" name="name" placeholder="Name" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="tel" name="phone" placeholder="Phone" required>
+        <textarea name="message" placeholder="Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+  </main>
 
 </body>
 </html>
