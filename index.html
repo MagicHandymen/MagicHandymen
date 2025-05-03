@@ -17,7 +17,7 @@
       color: white;
     }
 
-    /* Фиксированный контейнер шапки */
+    /* Header container */
     .header-wrapper {
       position: fixed;
       top: 0;
@@ -29,7 +29,7 @@
       align-items: center;
     }
 
-    /* Контейнер для ограничения ширины */
+    /* Header content */
     .header-content {
       width: 100%;
       max-width: 1200px;
@@ -39,7 +39,7 @@
       height: 160px;
     }
 
-    /* Навигация с фоновым изображением */
+    /* Navigation */
     .nav-container {
       width: 100%;
       background: url('your-middle.JPG') center top / cover;
@@ -76,7 +76,7 @@
       box-shadow: 0 5px 10px rgba(0,0,0,0.25);
     }
 
-    /* Основной контент */
+    /* Main content */
     main {
       margin-top: 200px;
     }
@@ -89,7 +89,7 @@
       scroll-margin-top: 200px;
     }
 
-    /* Якорь для точного позиционирования */
+    /* Anchor for positioning */
     .section-anchor {
       display: block;
       position: relative;
@@ -97,7 +97,7 @@
       visibility: hidden;
     }
 
-    /* Первая секция с дополнительным отступом */
+    /* First section */
     #about {
       padding-top: 60px;
     }
@@ -109,6 +109,7 @@
       padding: 20px;
       background-color: rgba(0,0,0,0.7);
       border-radius: 10px;
+      margin-bottom: 20px;
     }
 
     .services-list {
@@ -140,6 +141,33 @@
       border: none;
       border-radius: 10px;
       box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    /* Project description styles */
+    .project-description {
+      margin-top: 20px;
+    }
+
+    .project-description h3 {
+      color: #e67e22;
+      margin-bottom: 15px;
+    }
+
+    .project-details {
+      margin-top: 15px;
+    }
+
+    .project-details li {
+      margin-bottom: 8px;
+      position: relative;
+      padding-left: 25px;
+    }
+
+    .project-details li:before {
+      content: "•";
+      color: #e67e22;
+      position: absolute;
+      left: 10px;
     }
 
     .contact-form {
@@ -184,6 +212,7 @@
       border-radius: 8px;
     }
 
+    /* Responsive styles */
     @media (max-width: 768px) {
       .header-content {
         height: 120px;
@@ -271,29 +300,29 @@
       <span class="section-anchor" id="jobs-anchor"></span>
       <div class="content-block">
         <h2>Recent Projects</h2>
-        <p>Our latest works...</p>
+        <p>Here's one of our recent renovation projects:</p>
       </div>
+      
       <div class="video-container">
         <iframe src="https://www.youtube.com/embed/7NQ3YB6M4Hk"></iframe>
       </div>
-        <div class="content-block">
-        <p>  <div class="content-block">
-        <h2>Recent Projects</h2>
-        <p>Here’s one of the recent projects:
-Room before and after, with a nice wall color and a built-in wardrobe.
-
-Jobs done in this room:
--Suspended ceiling and 3 layers of carpet were removed
-- Walls and ceiling plastered and painted.  
-- Measures were taken to eliminate the floor squeak.  
-- Water-resistant laminate flooring was laid, capable of withstanding 100 hours of immersion in water.  
-- The window frame was insulated, addressing finger-wide gaps around it.  
-- A built-in wardrobe with LED lighting (activated when doors are opened) was installed. The wardrobe is based on the IKEA PAX system. Front panels, doors, and shelves were custom-made.  
-- Doors were restored and painted.  
-- A projector was installed, with wires hidden above the ceiling.  
-- Furniture was assembled, and new lights were installed.  
-- The ceiling was insulated from above. </p>
-      </div></p>
+      
+      <div class="content-block project-description">
+        <h3>Room Transformation</h3>
+        <p>Complete renovation of a living space including:</p>
+        <ul class="project-details">
+          <li>Suspended ceiling and 3 layers of carpet removal</li>
+          <li>Walls and ceiling plastering and painting</li>
+          <li>Floor squeak elimination measures</li>
+          <li>Water-resistant laminate flooring installation (withstands 100 hours of water immersion)</li>
+          <li>Window frame insulation (addressed finger-wide gaps)</li>
+          <li>Built-in wardrobe with LED lighting (activated when doors open)</li>
+          <li>Wardrobe based on IKEA PAX system with custom front panels, doors, and shelves</li>
+          <li>Door restoration and painting</li>
+          <li>Projector installation with hidden wiring above ceiling</li>
+          <li>Furniture assembly and new light installation</li>
+          <li>Ceiling insulation from above</li>
+        </ul>
       </div>
     </section>
 
@@ -313,7 +342,7 @@ Jobs done in this room:
   </main>
 
   <script>
-    // Корректировка якорных ссылок
+    // Anchor link adjustment
     document.querySelectorAll('.main-nav a').forEach(link => {
       link.addEventListener('click', function(e) {
         e.preventDefault();
