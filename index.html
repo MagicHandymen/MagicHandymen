@@ -3,7 +3,64 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Handyman Services</title>
+  <title>Handyman Services in Glasgow | HandyMagic - Plastering, Tiling, Carpentry</title>
+  <meta name="description" content="Professional handyman services in Glasgow. Plastering, painting, tiling, and home repairs. 15 years of experience. Call 07934 451296.">
+  
+  <!-- Микроразметка JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Handyman Services",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "HandyMagic",
+      "image": "https://handymagic.co.uk/images/logo.jpg",
+      "telephone": "+447934451296",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Glasgow",
+        "addressRegion": "Scotland",
+        "addressCountry": "UK"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "08:00",
+        "closes": "18:00"
+      }
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Handyman Services",
+      "itemListElement": [
+        {
+          "@type": "OfferCatalog",
+          "name": "Plastering",
+          "itemListElement": {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Wall Plastering"
+            }
+          }
+        },
+        {
+          "@type": "OfferCatalog",
+          "name": "Tiling",
+          "itemListElement": {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Floor Tiling"
+            }
+          }
+        }
+      ]
+    }
+  }
+  </script>
+
   <style>
     * {
       margin: 0;
@@ -96,7 +153,6 @@
       padding-top: 60px;
     }
 
-    /* Убрано затенение для About Us */
     .about-content {
       max-width: 800px;
       margin: 0 auto;
@@ -135,7 +191,6 @@
       box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     }
 
-    /* Стили для описания проекта под видео */
     .project-description {
       max-width: 800px;
       margin: 0 auto;
@@ -245,11 +300,11 @@
     <section id="about">
       <span class="section-anchor" id="about-anchor"></span>
       <div class="about-content">
-        <h2>About Our Company</h2>
+        <h1>About Our Company</h1>
         <p>Professional Handyman Services – 15 Years of experience.</p>
         <p>We provide handyman services across Glasgow area - from small repairs like fixing a door handle to full home renovations.</p>
         
-        <h3>Our services include:</h3>
+        <h2>Our services include:</h2>
         <ul class="services-list">
           <li>Plastering</li>
           <li>Insulation</li>
@@ -271,7 +326,7 @@
         <h2>Recent Projects</h2>
       </div>
       <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/_pWu1NgY1Vo"></iframe>
+        <iframe src="https://www.youtube.com/embed/_pWu1NgY1Vo" title="Our recent handyman project in Glasgow" allowfullscreen></iframe>
       </div>
       <div class="project-description">
 Here’s one of the recent jobs:
@@ -322,6 +377,20 @@ Jobs done in this room:
           });
         }
       });
+    });
+
+    // Обработчик формы для уведомления об отправке
+    const form = document.querySelector('.contact-form');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form)
+      });
+      if (response.ok) {
+        alert('Thank you! Your message has been sent.');
+        form.reset();
+      }
     });
   </script>
 </body>
