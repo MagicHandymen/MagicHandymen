@@ -6,19 +6,4 @@
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
-  <url>
-    <loc>https://handymagic.co.uk/#about</loc>
-    <lastmod>2025-05-04</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://handymagic.co.uk/#jobs</loc>
-    <lastmod>2025-05-04</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://handymagic.co.uk/#contact</loc>
-    <lastmod>2025-05-04</lastmod>
-    <priority>0.8</priority>
-  </url>
 </urlset>
